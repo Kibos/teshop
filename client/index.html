@@ -64,7 +64,7 @@
 
       <div id="content">
           <div class="container">
-            
+
     <div ui-view=""></div>
   </div>
   <!-- /.container -->
@@ -269,6 +269,7 @@
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
       <script src="bower_components/angularjs-slider/dist/rzslider.js"></script>
       <script src="bower_components/checklist-model/checklist-model.js"></script>
+      <script src="bower_components/json3/lib/json3.js"></script>
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
       <script src="bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
@@ -277,17 +278,30 @@
       <!-- endbower -->
       <script src="/components/navbar/bootstrap.min.js"></script>
       <script src="socket.io-client/socket.io.js"></script>
-<!-- 
+
+
+        <script  src="js/ueditor/ueditor.config.js"></script>
+        <script  src="js/ueditor/ueditor.all.min.js"> </script>
+ <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+        <script src="js/ueditor/lang/zh-cn/zh-cn.js"></script>
+
+<!--
+        <script  src="../public/ueditor/ueditor.config.js"></script>
+        <script  src="../public/ueditor/ueditor.all.min.js"> </script>
+ <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+        <!--<script src="../public/ueditor/lang/zh-cn/zh-cn.js"></script>-->-->
+
+<!--
       <script src="../client/js/angular.min.js"></script>
       <script src="//cdn.bootcss.com/angular.js/1.2.28/angular.min.js"></script>
       <script src="//cdn.bootcss.com/angular.js/1.2.29/angular.js"></script>
       <script src="../client/js/kindeditor-all-min.js"></script>
       <script src="../client/js/zh-CN.js"></script>
-      <script src="../client/js/angular-kindeditor.js"></script> 
+      <script src="../client/js/angular-kindeditor.js"></script>
 
-     
+
 -->
-    
+
 
 
     <!-- endbuild -->
@@ -345,6 +359,7 @@
           <script src="app/paymentMethod/paymentMethod.js"></script>
           <script src="app/product/product.controller.js"></script>
           <script src="app/product/product.js"></script>
+          <script src="app/product/ueditor.directive.js"></script>
           <script src="app/settings.js"></script>
           <script src="app/shipping/shipping.controller.js"></script>
           <script src="app/shipping/shipping.js"></script>

@@ -143,6 +143,13 @@
                                 <li ng-repeat="f in product.keyFeatures">{{f}}</li>
                             </ul>
                         </div>
+                         <h4>Introduction</h4>
+                          <div ng-if="product.introduction.length>0" class="ng-binding pic_adapt"  data-ng-bind-html="product.introduction|htmlContent" >
+                           
+                            {{product.introduction}}
+                            <br>
+                            <br>
+                        </div>
                         <blockquote>
                             <p>Define style this season with Armani's new range of trendy tops, crafted with intricate details. Create a chic statement look by teaming this lace number with skinny jeans and pumps.
                             </p>

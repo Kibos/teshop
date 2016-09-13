@@ -16,6 +16,7 @@ angular.module('shopnxApp')
     $scope.product.variants = [];
     $scope.product.features = [];
     $scope.product.keyFeatures = [];
+    $scope.product.introduction = [];
     // $scope.selected = {};
     // $scope.selected.feature = [];
     $scope.features = Feature.query();
@@ -33,7 +34,7 @@ angular.module('shopnxApp')
     $scope.brands = Brand.query(function() {
       socket.syncUpdates('brand', $scope.brands);
     });
-    $scope.edit = function(product){
+    $scope.edit = function(product) {
       var title; if(product.name){ title = 'Editing ' + product.name;} else{ title = 'Add New';}
       Modal.show(product,{title:title, api:'Product', columns: cols});
     };
@@ -77,6 +78,13 @@ angular.module('shopnxApp')
         $scope.product.features.push($scope.newFeature);
         // console.log($scope.product.features);
       }
+
+      // if('introduction' in $scope.product.introduction){
+      //     // ueditor.getContent();
+      // }else{
+      //    $scope.product.introduction ='';
+      // }
+
       $scope.variant = {};
       $scope.newKF = {};
       $scope.newFeature = {};
@@ -135,22 +143,21 @@ angular.module('shopnxApp')
 
     // var app = angular.module("demoApp",['ngKeditor']);
     // app.controller("kindeditorCtrl",["$scope",function($scope){
-    // $scope.info = function($scope){
-    //         content : "hello,world"
+    $scope.info = function($scope){
+            content : "hello,world"
    
-    // $scope.config = {width: '100px'};
+    $scope.config = {width: '100px'};
 
-    // $scope.reg = /\d+/g;
-    //  };
-    // }]);
+    $scope.reg = /\d+/g;
+     };
+  
+  //  ueditor.getContent();
+    // ueditor.ready(function() {
+    //   ueditor.setContent(scope.product.introduction);
+    // });
+  // var ueditor = UE.getEditor('container');
+  // console.log(ueditor.getContent());
+
 
   });
-var app = angular.module("demoApp",['ngKeditor']);
-    app.controller("kindeditorCtrl",["$scope",function($scope){
-        $scope.info = {
-                content : "hello,world"
-        };
-        $scope.config = {width: '100px'};
 
-        $scope.reg = /\d+/g;
-    }]);

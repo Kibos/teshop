@@ -15,7 +15,8 @@ angular.module('shopnxApp', [
   'infinite-scroll',
   'darthwade.dwLoading',
   'angularMoment',
-  'ui.select'
+  'ui.select',
+  'ms.ueditor'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
@@ -76,7 +77,23 @@ angular.module('shopnxApp', [
         this.active = false;
       }
     };
-  });
+  })
+  
+  // .controller('ueditorController',['$scope',function($scope){
+	// 		$scope.setValue=function(){
+	// 			$scope.value="设置值";
+	// 		}
+
+	// 		$scope.value="sdsds";
+
+
+	// 		$scope.getValue=function(){
+	// 			alert($scope.value);
+	// 		}
+	// }])
+  
+  ;
+  
 
   // .run(run);
   // run.$inject = ['$rootScope'];
