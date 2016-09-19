@@ -4,7 +4,7 @@ var path = require('path');
 var utility = require('utility');
 var uploadConfig = require('./config').upload;
 
-var ueditor = function(static_url){
+var ueditor = function(static_path){
 	return function(req,res,next){
 		console.log("---"+req.query.action);
 			if(req.query.action === 'listimage'){
@@ -15,7 +15,7 @@ var ueditor = function(static_url){
 		    var list = [];
 		    var allowFiletypes = uploadConfig.imageAllowFiles;
 
-		    fs.readdir(path.join(static_url + list_dir), function(err, files) {
+		    fs.readdir(path.join(static_path + list_dir), function(err, files) {
 		        if (err) {
 		        	return next(err);
 		        }

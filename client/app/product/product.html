@@ -1,3 +1,7 @@
+<script  src="js/ueditor/ueditor.config.js"></script>
+<script  src="js/ueditor/ueditor.all.min.js"> </script>
+<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+<script src="js/ueditor/lang/zh-cn/zh-cn.js"></script>
 <link rel="stylesheet" href="bower_components/angular-tablesort/tablesort.css" />
 <form name="product_form">
   <div class="col-sm-12">
@@ -297,11 +301,11 @@
                   </div>
                 </div>
                 <hr/>
-              
+
                 <!--<script id="container" name="content" type="text/plain"  style="width:100%;height:500px;">
                 </script>
 
-              
+
                 <script type="text/javascript">-->
 
             <!--//      var ueditor = UE.getEditor('container');
@@ -309,7 +313,7 @@
                   // console.log("comment");
                   // console.log(comment);
 
-        
+
                   // ueditor.ready(function() {
     //   ueditor.setContent(scope.product.introduction);
     // });
@@ -320,7 +324,10 @@
     	<button ng-click="setValue()">设置值</button>
     	<button ng-click="getValue()">获取值</button>
     </div>-->
-	<ms-ueditor ng-model="product.introduction" value="{{product.stock}}" style="width:100%;height:500px;"></ms-ueditor>
+
+    <!-- 富文本编辑器 -->
+	<ms-ueditor ng-model="product.introduction" value="{{product.introduction}}" style="width:100%;height:500px;">
+  </ms-ueditor>
 
 
 

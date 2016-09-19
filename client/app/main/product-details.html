@@ -48,7 +48,7 @@
                 <div class="row" id="productMain">
                     <div class="col-sm-6">
                         <div id="mainImage">
-                            <img src="/assets/clothing/{{product.variants[0].image}}" err-src="/assets/images/photo.png" alt="{{product.name}}" class="img-responsive">
+                            <img src="/assets/clothing/{{product.variants[0].image}}" err-src="/assets/images/default.jpg" alt="{{product.name}}" class="img-responsive">
                         </div>
 
                         <div class="ribbon sale">
@@ -88,7 +88,7 @@
                         <div class="row" id="thumbs">
                             <div class="col-xs-4" ng-repeat="v in product.variants" ng-click="changeIndex($index);" ng-if="v.size!=product.variants[i].size">
                                 <a href="" class="thumb">
-                                  <img src="/assets/clothing/{{v.image}}" err-src="/assets/images/photo.png" alt="{{product.name}}" class="img-responsive">
+                                  <img src="/assets/clothing/{{v.image}}" err-src="/assets/images/default.jpg" alt="{{product.name}}" class="img-responsive">
                                   {{product.name}} (Size: {{v.size}})
                                   <p class="price"><del class="text-muted" ng-if="v.price!=v.mrp" >${{v.mrp}}</del>&nbsp;${{v.price}}</p>
                                 </a>
