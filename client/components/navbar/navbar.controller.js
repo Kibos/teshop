@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('shopnxApp')
-  .controller('NavbarCtrl', ['$scope', '$rootScope', '$location', 'Auth', '$modal', 'Cart', 'Category', 'Brand', 'SortOptions', '$q', 'Product', '$state', function ($scope, $rootScope, $location, Auth, $modal, Cart, Category, Brand,SortOptions,$q, Product, $state) {
+  .controller('NavbarCtrl', ['$scope', '$rootScope', '$location', 'Auth', '$modal', 'Cart', 'Category', 'Brand', 'SortOptions', '$q', 'Product', '$state','$translate','$window', function ($scope, $rootScope, $location, Auth, $modal, Cart, Category, Brand,SortOptions,$q, Product, $state,$translate,$window) {
     $scope.hideSubMenu = function(){
       // $('.megamenu .dropdown:hover .dropdown-menu').hide(); // Hide the navbar submenu once a category is selected
     }
@@ -128,4 +128,24 @@ angular.module('shopnxApp')
             };
         };
         cartEditCtrl.$inject = ['$scope', '$modalInstance', 'cart'];
-  }]);
+
+        $scope.switching = function(lang){
+            $translate.use(lang);
+            window.localStorage.lang = lang;
+            window.location.reload();
+            console.log("00000:LL)))))"+lang);
+        };
+        $scope.cur_lang = $translate.use();
+        // console.log("00000:LL"+$scope.cur_lang);
+
+        // $scope.$watch('cur_lang', function() {
+        // //    switching($scope.cur_lang);
+        //     console.log("333");
+        // });
+
+  }])
+
+//   .controller('LanguageSwitchingCtrl', ['$scope', '$translate', function (scope, $translate) {
+
+//     }])
+    ;

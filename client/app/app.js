@@ -16,14 +16,19 @@ angular.module('shopnxApp', [
   'darthwade.dwLoading',
   'angularMoment',
   'ui.select',
+  'pascalprecht.translate',
   'ms.ueditor'
+
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
       .otherwise('/');
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
+
+
   })
+
 
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
     return {
@@ -50,7 +55,6 @@ angular.module('shopnxApp', [
       }
     };
   })
-
   .run(function ($rootScope, Auth, $state) {
 
     // Redirect to login if route requires auth and you're not logged in
@@ -78,25 +82,6 @@ angular.module('shopnxApp', [
       }
     };
   })
-  
-  // .controller('ueditorController',['$scope',function($scope){
-	// 		$scope.setValue=function(){
-	// 			$scope.value="设置值";
-	// 		}
-
-	// 		$scope.value="sdsds";
 
 
-	// 		$scope.getValue=function(){
-	// 			alert($scope.value);
-	// 		}
-	// }])
-  
-  ;
-  
-
-  // .run(run);
-  // run.$inject = ['$rootScope'];
-  // function run ($rootScope) { // The function to display a loading spinner on ajax request
-  //
-  // }
+    ;

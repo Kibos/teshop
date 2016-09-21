@@ -58,7 +58,11 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-
+    <!--<select class="language-switching" ng-controller="LanguageSwitchingCtrl" ng-model="cur_lang"     ng-change="switching(cur_lang)">
+     <option value="en">English</option>
+     <option value="cn" selected="selected">简体中文</option>
+ </select>-->
+  <span translate="Settings">Settings</span>
     <div ng-include="'components/navbar/navbar.html'"></div>
     <div id="all">
 
@@ -275,6 +279,8 @@
       <script src="bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
       <script src="bower_components/ui-select/dist/select.js"></script>
       <script src="bower_components/angular-gettext/dist/angular-gettext.js"></script>
+      <script src="bower_components/angular-translate/angular-translate.js"></script>
+      <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
       <!-- endbower -->
       <script src="/components/navbar/bootstrap.min.js"></script>
       <script src="socket.io-client/socket.io.js"></script>
@@ -308,6 +314,9 @@
 
 
         <!-- build:js({.tmp,client}) app/app.js -->
+
+        <script src="bower_components/angular-translate/angular-translate.min.js"></script>
+        <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
 
         <script src="app/app.js"></script>
           <!-- injector:js -->

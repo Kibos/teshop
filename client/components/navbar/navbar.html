@@ -3,13 +3,22 @@
 _________________________________________________________ -->
 <div id="top">
     <div class="container">
-        <div class="col-md-6 offer" data-animate="fadeInDown">
-            <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">Offer of the day</a>  <a href="#">Get flat 35% off on orders over $50!</a>
+        <div class="col-md-5 offer" data-animate="fadeInDown">
+            <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake" translate>JIANYI GROUP</a>  <a href="#" translate>Industry Leader</a>
+ <span translate>Settings</span>
         </div>
-        <div class="col-md-6" data-animate="fadeInDown">
+        <div class="col-md-7" data-animate="fadeInDown">
+
             <ul class="menu">
-              <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}"><a href="/signup">Sign up</a></li>
-              <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href="/login">Login</a></li>
+              <li>
+                <select class="language-switching"  ng-model="cur_lang"     ng-change="switching(cur_lang)">
+                  <option value="en">English</option>
+                  <option value="cn" selected="selected">简体中文</option>
+                </select>
+
+              </li>
+              <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}">{{cur_lang}} <span translate>Settings</span><a href="/signup" translate>Sign up</a></li>
+              <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href="/login" translate>Login</a></li>
               <li ng-show="isLoggedIn()"><a href="">Hello {{ getCurrentUser().name }} </a></li>
               <li class="dropdown" ng-show="isLoggedIn()" dropdown="">
                 <a href="#" dropdown-toggle="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-dashboard">&nbsp;</i>Dashboard<b class="caret"></b>
@@ -19,7 +28,7 @@ _________________________________________________________ -->
                   <li ng-show="isAdmin()" ng-class="{active: isActive('/administration')}">
                     <a href="/administration"><i class="fa fa-tag">&nbsp;</i>用户管理</a>
                   </li>
-                  <!-- 用户管理结束 --> 
+                  <!-- 用户管理结束 -->
                   <li ng-show="isAdmin()" ng-class="{active: isActive('/product')}">
                     <a href="/product"><i class="fa fa-truck">&nbsp;</i>Products</a>
                   </li>
